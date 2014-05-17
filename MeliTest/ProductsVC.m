@@ -80,7 +80,10 @@ static dispatch_queue_t imageQueue;
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImage *img = [UIImage imageWithData:imageData];
                 [weakSelf.images setValue:img forKey:[NSString stringWithFormat:@"%i", indexPath.row]];
-                [cell setProductImage:img];
+                //[cell setProductImage:img];
+                ProductCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                if (updateCell)
+                    [cell setProductImage:img];
             });
         });
     }
