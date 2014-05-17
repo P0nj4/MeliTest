@@ -28,6 +28,7 @@
 		4416B60419270A7F006084C1 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B60319270A7F006084C1 /* SearchVC.m */; };
 		4416B61C192793F1006084C1 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B61B192793F1006084C1 /* LoadingView.m */; };
 		4416B62519279B2D006084C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4416B62719279B2D006084C1 /* Localizable.strings */; };
+		4416B62C1927AAC4006084C1 /* ASScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B62B1927AAC4006084C1 /* ASScroll.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		4416B61B192793F1006084C1 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		4416B62619279B2D006084C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4416B62819279B33006084C1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4416B62A1927AAC4006084C1 /* ASScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASScroll.h; sourceTree = "<group>"; };
+		4416B62B1927AAC4006084C1 /* ASScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASScroll.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,7 @@
 		4416B5A419268D23006084C1 /* MeliTest */ = {
 			isa = PBXGroup;
 			children = (
+				4416B6291927AAC4006084C1 /* External */,
 				4416B619192793F1006084C1 /* CustomizedViews */,
 				4416B5FE192709EC006084C1 /* ViewControllers */,
 				4416B5FA192709B9006084C1 /* Entities */,
@@ -212,6 +216,15 @@
 				4416B61B192793F1006084C1 /* LoadingView.m */,
 			);
 			path = CustomizedViews;
+			sourceTree = "<group>";
+		};
+		4416B6291927AAC4006084C1 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				4416B62A1927AAC4006084C1 /* ASScroll.h */,
+				4416B62B1927AAC4006084C1 /* ASScroll.m */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +326,7 @@
 			files = (
 				4416B5AF19268D23006084C1 /* AppDelegate.m in Sources */,
 				4416B61C192793F1006084C1 /* LoadingView.m in Sources */,
+				4416B62C1927AAC4006084C1 /* ASScroll.m in Sources */,
 				4416B5F91926E981006084C1 /* UIUtilities.m in Sources */,
 				4416B5CF19268EA7006084C1 /* ProductManager.m in Sources */,
 				4416B5ED1926A334006084C1 /* ProductsTableView.m in Sources */,

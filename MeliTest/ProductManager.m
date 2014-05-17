@@ -56,7 +56,7 @@ static ProductManager *sharedPManager = nil;
     NSString *url = [NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLU/search?q=%@&limit=10&offset=%i", search, self.allProducts.count - 1];
     NSDictionary *jsonResult = [self makeRequest:url error:&error];
     
-    if (error) {
+    if (error || !jsonResult) {
         @throw [[NSException alloc] initWithName:@"searviceConsume" reason:error.description userInfo:nil];
     }
     
@@ -74,6 +74,25 @@ static ProductManager *sharedPManager = nil;
 
 - (void)setProductInformation:(Product *)item{
     
+    NSError *error;
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mercadolibre.com/items/%@",item.identifier];
+    NSDictionary *jsonResult = [self makeRequest:url error:&error];
+    
+    if (error || !jsonResult) {
+        @throw [[NSException alloc] initWithName:@"searviceConsume" reason:error.description userInfo:nil];
+    }
+    
+    Product *newProduct = nil;
+    NSArray *jsonList = [jsonResult objectForKey:@"results"];
+    
+    for (NSDictionary *jsonProd in jsonList) {
+        newProduct = [[Product alloc] initWithJson:jsonProd];
+        if (newProduct) {
+            [self.allProducts addObject:newProduct];
+        }
+        newProduct = nil;
+    }
 }
 
 
