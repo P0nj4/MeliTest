@@ -32,28 +32,34 @@ static ProductManager *sharedPManager = nil;
     return self;
 }
 
-
-- (void)searchBy:(NSString *)search;
-{
-    NSString *strURL = [[NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLU/search?q=%@&limit=10&offset=%i", search, self.allProducts.count - 1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+- (NSDictionary *)makeRequest:(NSString *)url error:(NSError **)error{
+    NSString *strURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSURL *url = [NSURL URLWithString:strURL];
-    NSLog(@"request %@", url);
+    NSURL *urlForReq = [NSURL URLWithString:strURL];
+    NSLog(@"request %@", urlForReq);
     
     NSURLResponse* response = nil;
     
-    NSURLRequest* urlRequest =  [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-    NSError *error;
-    NSData* data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error] ;
+    NSURLRequest* urlRequest =  [NSURLRequest requestWithURL:urlForReq cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+    NSData* data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:error] ;
+    if (error && !data) {
+        return nil;
+    }
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+}
 
+
+- (void)searchBy:(NSString *)search;
+{
+    NSError *error;
+
+    NSString *url = [NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLU/search?q=%@&limit=10&offset=%i", search, self.allProducts.count - 1];
+    NSDictionary *jsonResult = [self makeRequest:url error:&error];
+    
     if (error) {
         @throw [[NSException alloc] initWithName:@"searviceConsume" reason:error.description userInfo:nil];
     }
     
-    NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:data
-                                                               options:0
-                                                                 error:NULL];
-
     Product *newProduct = nil;
     NSArray *jsonList = [jsonResult objectForKey:@"results"];
     
@@ -64,6 +70,10 @@ static ProductManager *sharedPManager = nil;
         }
         newProduct = nil;
     }
+}
+
+- (void)setProductInformation:(Product *)item{
+    
 }
 
 
