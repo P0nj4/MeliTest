@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, assign) double price;
 @property (nonatomic, strong) NSString *thumbnail;
+@property (nonatomic, strong) NSString *currency;
 
 - (id)initWithJson:(NSDictionary *)json;
 @end

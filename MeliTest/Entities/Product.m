@@ -17,6 +17,7 @@
         self.title = [json objectForKey:@"title"];
         self.price = [[json objectForKey:@"price"] doubleValue];
         self.thumbnail = [json objectForKey:@"thumbnail"];
+        self.currency = ([[json objectForKey:@"currency_id"] isEqualToString:@"USD"] ? @"U$S" : @"$");
     }
     return self;
 }

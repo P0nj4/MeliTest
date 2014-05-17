@@ -68,7 +68,7 @@ static dispatch_queue_t imageQueue;
         cell = [[ProductCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CellProducts"] ;
     }
 
-    [cell displayInfoWithTitle:prodCell.title price:prodCell.price];
+    [cell displayInfoWithTitle:prodCell.title price:prodCell.price currencySymbol:prodCell.currency];
     
     cell.imgThumbnail.hidden = YES;
     

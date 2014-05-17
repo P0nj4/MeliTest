@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface UIUtilities : NSObject
-+ (NSString *)stringWithDoubleAndCurrencySymbol:(double)number;
++ (NSString *)stringWithDoubleAndCurrencySymbol:(double)number currencySymbol:(NSString *)symbol;
 + (void)moveView:(UIView*)view newYposition:(float)newYposition;
 @end

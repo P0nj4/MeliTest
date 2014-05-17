@@ -35,9 +35,10 @@ static ProductManager *sharedPManager = nil;
 
 - (void)searchBy:(NSString *)search;
 {
-#warning encodeURL
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLA/search?q=%@&limit=10&offset=%i", search, self.allProducts.count - 1]];
+    NSString *strURL = [[NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLU/search?q=%@&limit=10&offset=%i", search, self.allProducts.count - 1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
+    NSURL *url = [NSURL URLWithString:strURL];
+    NSLog(@"request %@", url);
     
     NSURLResponse* response = nil;
     

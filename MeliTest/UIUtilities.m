@@ -11,7 +11,7 @@
 @implementation UIUtilities
 
 
-+ (NSString *)stringWithDoubleAndCurrencySymbol:(double)number{
++ (NSString *)stringWithDoubleAndCurrencySymbol:(double)number currencySymbol:(NSString *)symbol{
     
     NSString *result = nil;
     int intpart = (int)number;
@@ -20,9 +20,9 @@
         result = [NSString stringWithFormat:@"%i",intpart];
     }
     else{
-        result = [NSString stringWithFormat:@"%.1lf",number];
+        result = [NSString stringWithFormat:@"%.2lf",number];
     }
-    result = [NSString stringWithFormat:@"$%@", [result stringByReplacingOccurrencesOfString:@"." withString:@","]];
+    result = [NSString stringWithFormat:@"%@ %@",symbol, [result stringByReplacingOccurrencesOfString:@"." withString:@","]];
     return result;
 }
 

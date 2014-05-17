@@ -53,7 +53,7 @@
     // Configure the view for the selected state
 }
 
-- (void)displayInfoWithTitle:(NSString *)title price:(double)price{
+- (void)displayInfoWithTitle:(NSString *)title price:(double)price currencySymbol:(NSString *)symbol{
     self.lblTitle.text = title;
     CGRect titleRect = self.lblTitle.frame;
     
@@ -63,8 +63,7 @@
     self.lblTitle.frame = titleRect;
     self.lblPrice.frame = CGRectMake(self.lblPrice.frame.origin.x, CGRectGetMaxY(self.lblTitle.frame) + 10, self.lblPrice.frame.size.width, self.lblPrice.frame.size.height);
     
-#warning el formato no es el mismo, y además falta saber si son dolares o no
-    self.lblPrice.text = [UIUtilities stringWithDoubleAndCurrencySymbol:price];
+    self.lblPrice.text = [UIUtilities stringWithDoubleAndCurrencySymbol:price currencySymbol:symbol];
 }
 
 - (void)setProductImage:(UIImage *)img{

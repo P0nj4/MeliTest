@@ -14,6 +14,6 @@
 @property (nonatomic, strong) UILabel *lblPrice;
 @property (nonatomic, strong) UIImageView *imgThumbnail;
 
-- (void)displayInfoWithTitle:(NSString *)title price:(double)price;
+- (void)displayInfoWithTitle:(NSString *)title price:(double)price currencySymbol:(NSString *)symbol;
 - (void)setProductImage:(UIImage *)img;
 @end
