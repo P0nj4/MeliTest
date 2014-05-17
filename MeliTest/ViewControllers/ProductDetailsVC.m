@@ -6,11 +6,15 @@
 //  Copyright (c) 2014 P0nj4. All rights reserved.
 //
 
+#define kTitleFontHeight 12
+#define kPriceFontHeight 12
+
 #import "ProductDetailsVC.h"
 #import "ProductManager.h"
 #import "LoadingView.h"
 #import "UIViewPictureSwype.h"
 #import "ProductDescriptionVC.h"
+#import "UIUtilities.h"
 
 @interface ProductDetailsVC ()
 @property (nonatomic, strong) NSMutableArray *images;
@@ -42,6 +46,35 @@
         [[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"GenericError", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
         return;
     }
+    
+    
+    UILabel *lblTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 70, 300, [UIFont systemFontOfSize:kTitleFontHeight].lineHeight)];
+    lblTitle.font = [UIFont systemFontOfSize:kTitleFontHeight];
+    lblTitle.text = self.currentProduct.title;
+    lblTitle.backgroundColor = [UIColor clearColor];
+    lblTitle.textColor = [UIColor colorWithRed:102/255.0f green:102/255.0f blue:102/255.0f alpha:1.0f];
+    lblTitle.numberOfLines = 0;
+    lblTitle.textAlignment = NSTextAlignmentCenter;
+    CGRect titleRect = lblTitle.frame;
+    
+    CGSize newSize = [self.currentProduct.title sizeWithFont:lblTitle.font constrainedToSize:CGSizeMake(300, CGFLOAT_MAX) lineBreakMode:NSLineBreakByClipping];
+    newSize.width = 300;
+    titleRect.size = newSize;
+    lblTitle.frame = titleRect;
+    
+    
+    UILabel *lblPrice = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 300, [UIFont systemFontOfSize:kPriceFontHeight].lineHeight)];
+    lblPrice.font = [UIFont systemFontOfSize:kPriceFontHeight];
+    lblPrice.backgroundColor = [UIColor clearColor];
+    lblPrice.textAlignment = NSTextAlignmentCenter;
+    lblPrice.textColor =  [UIColor colorWithRed:153/255.0f green:0/255.0f blue:0/255.0f alpha:1.0f];
+    
+    lblPrice.frame = CGRectMake(lblPrice.frame.origin.x, CGRectGetMaxY(lblTitle.frame) + 10, lblPrice.frame.size.width, lblPrice.frame.size.height);
+    lblPrice.text = [UIUtilities stringWithDoubleAndCurrencySymbol:self.currentProduct.price currencySymbol:self.currentProduct.currency];
+    
+    [self.view addSubview:lblTitle];
+    [self.view addSubview:lblPrice];
+    
     
     self.lblInfo = [[UILabel alloc] initWithFrame:CGRectMake(10, 275, 300, 0)];
     self.lblInfo.textAlignment = NSTextAlignmentCenter;
@@ -79,12 +112,14 @@
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                UIViewPictureSwype *asScroll = [[UIViewPictureSwype alloc]initWithFrame:CGRectMake((weakSelf.view.bounds.size.width - 200) / 2,70.0,200.0,200.0) withImages:self.images];
+                UIViewPictureSwype *asScroll = [[UIViewPictureSwype alloc]initWithFrame:CGRectMake((weakSelf.view.bounds.size.width - 200) / 2,CGRectGetMaxY(lblTitle.frame) + 10 ,200.0,200.0) withImages:self.images];
                 [weakSelf.view addSubview:asScroll];
-                //"ProductDetailInfo" = "Condición: %@\nCantidad: %@\nVendidos: %@\nCiudad del vendedor%@\n\nDescripción";
+                
+                lblPrice.frame = CGRectMake(lblPrice.frame.origin.x, CGRectGetMaxY(asScroll.frame) + 10, lblPrice.frame.size.width, lblPrice.frame.size.height);
+                
                 weakSelf.lblInfo.text = [NSString stringWithFormat:NSLocalizedString(@"ProductDetailInfo", nil),weakSelf.currentProduct.condition, weakSelf.currentProduct.available_quantity, weakSelf.currentProduct.sold_quantity, weakSelf.currentProduct.city];
                 
-                weakSelf.lblInfo.frame = CGRectMake(weakSelf.lblInfo.frame.origin.x, weakSelf.lblInfo.frame.origin.y, weakSelf.lblInfo.frame.size.width, [weakSelf.lblInfo.text sizeWithFont:weakSelf.lblInfo.font constrainedToSize:CGSizeMake(weakSelf.lblInfo.frame.size.width, 99999) lineBreakMode:self.lblInfo.lineBreakMode].height);
+                weakSelf.lblInfo.frame = CGRectMake(weakSelf.lblInfo.frame.origin.x, CGRectGetMaxY(lblPrice.frame) + 10 , weakSelf.lblInfo.frame.size.width, [weakSelf.lblInfo.text sizeWithFont:weakSelf.lblInfo.font constrainedToSize:CGSizeMake(weakSelf.lblInfo.frame.size.width, 99999) lineBreakMode:self.lblInfo.lineBreakMode].height);
                 NSLog(@"%@ %@",weakSelf.lblInfo.text,NSStringFromCGRect(weakSelf.lblInfo.frame));
                 
                 [LoadingView loadingHideOnView:weakSelf.view animated:YES];

@@ -9,7 +9,7 @@
 "NoResults" = "We doens't found anything with \"%@\"";
 "new" = "New";
 "used" = "Used";
-"ProductDetailInfo" = "Condition: %@\nQuantity: %i\nSold: %i\nSeller city:%@";
+"ProductDetailInfo" = "Condition: %@\nQuantity: %i\nSold: %i\nSeller city: %@";
 "SeeDescription" = "See description";
 
 //Errors

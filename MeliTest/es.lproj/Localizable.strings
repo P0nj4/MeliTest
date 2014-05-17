@@ -9,7 +9,7 @@
 "NoResults" = "No encontramos nada con \"%@\"";
 "new" = "Nuevo";
 "used" = "Usado";
-"ProductDetailInfo" = "Condición: %@\nCantidad: %i\nVendidos: %i\nCiudad del vendedor:%@";
+"ProductDetailInfo" = "Condición: %@\nCantidad: %i\nVendidos: %i\nCiudad del vendedor: %@";
 "SeeDescription" = "Ver descripción";
 
 //Errors

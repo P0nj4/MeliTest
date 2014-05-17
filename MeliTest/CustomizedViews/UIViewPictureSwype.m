@@ -27,7 +27,7 @@
         iv.image = [self.images objectAtIndex:0];
         [iv setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:iv];
-
+        
         if (self.images.count > 1) {
             UILabel *countImage = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 10)];
             countImage.text = [NSString stringWithFormat:@"%i/%i", self.index + 1, self.images.count];
@@ -36,7 +36,14 @@
             countImage.tag = 99;
             countImage.textAlignment = NSTextAlignmentCenter;
             countImage.center = CGPointMake(iv.center.x, iv.frame.size.height - ((countImage.frame.size.height / 2) + 5));
+            
+            UIView *backCountImage = [[UIView alloc] initWithFrame:countImage.frame];
+            backCountImage.backgroundColor = [UIColor blackColor];
+            backCountImage.alpha = 0.3;
+            backCountImage.layer.cornerRadius = 4;
+            [self addSubview:backCountImage];
             [self addSubview:countImage];
+            
         }
         
         UISwipeGestureRecognizer *gestureRight;
@@ -45,7 +52,7 @@
         gestureLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGesture:)];//need to set direction.
         [gestureLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
         [gestureRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
-
+        
         [self addGestureRecognizer:gestureRight];//this gets things rolling.
         [self addGestureRecognizer:gestureLeft];//this gets things rolling.
         
@@ -61,13 +68,7 @@
             return;
         }
         self.index++;
-        [UIView animateWithDuration:0.1 animations:^{
-            iv.alpha = 0;
-        }completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.3 animations:^{
-                iv.alpha = 1;
-            }];
-        }];
+        
         iv.image = [self.images objectAtIndex:self.index];
     }
     else if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
@@ -75,15 +76,7 @@
             return;
         }
         self.index--;
-        [UIView animateWithDuration:0.1 animations:^{
-            iv.alpha = 0;
-        }completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.3 animations:^{
-                iv.alpha = 1;
-            }];
-        }];
-
-        iv.image = [self.images objectAtIndex:self.index];
+               iv.image = [self.images objectAtIndex:self.index];
     }
     UILabel *countImage = (UILabel *)[self viewWithTag:99];
     countImage.text = [NSString stringWithFormat:@"%li/%lu", self.index + 1, (unsigned long)self.images.count];
