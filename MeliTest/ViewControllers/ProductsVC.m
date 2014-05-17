@@ -12,6 +12,7 @@
 #import "ProductsTableView.h"
 #import "ProductCell.h"
 #import "LoadingView.h"
+#import "ProductDetailsVC.h"
 
 static dispatch_queue_t imageQueue;
 
@@ -74,7 +75,6 @@ static dispatch_queue_t imageQueue;
     
     UIImage *img = [self.images objectForKey:[NSString stringWithFormat:@"%i", indexPath.row]];
     if (img) {
-        //[[cell imageView] setImage:img];
         [cell setProductImage:img];
     } else {
         __weak typeof(self) weakSelf = self;
@@ -83,7 +83,6 @@ static dispatch_queue_t imageQueue;
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIImage *img = [UIImage imageWithData:imageData];
                 [weakSelf.images setValue:img forKey:[NSString stringWithFormat:@"%i", indexPath.row]];
-                //[cell setProductImage:img];
                 ProductCell *updateCell = (id)[weakSelf.tblProducts cellForRowAtIndexPath:indexPath];
                 if (updateCell)
                     [cell setProductImage:img];
@@ -97,9 +96,6 @@ static dispatch_queue_t imageQueue;
     return 85;
 }
 
-
-
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
@@ -111,6 +107,12 @@ static dispatch_queue_t imageQueue;
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ProductDetailsVC *vc = [[ProductDetailsVC alloc] init];
+    vc.currentProduct = [[[ProductManager sharedInstance] allProducts] objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - Private methods
 - (void)makeSearch{

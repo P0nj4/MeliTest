@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
+#import "Product.h"
 
 
 @interface ProductManager : NSObject
@@ -16,5 +15,6 @@
 
 + (ProductManager *)sharedInstance;
 - (void)searchBy:(NSString *)search;
+- (void)setProductInformation:(Product *)item; 
 
 @end

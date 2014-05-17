@@ -7,6 +7,10 @@
 */
 "Loading" = "Loading";
 "NoResults" = "We doens't found anything with \"%@\"";
+"new" = "New";
+"used" = "Used";
+"ProductDetailInfo" = "Condition: %@\nQuantity: %i\nSold: %i\nSeller city:%@";
+"SeeDescription" = "See description";
 
 //Errors
 "GenericError" = "oops we're experiencing some difficulties, please try again later";

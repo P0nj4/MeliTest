@@ -7,7 +7,6 @@
 //
 
 #import "ProductManager.h"
-#import "Product.h"
 
 
 static ProductManager *sharedPManager = nil;
@@ -82,17 +81,8 @@ static ProductManager *sharedPManager = nil;
     if (error || !jsonResult) {
         @throw [[NSException alloc] initWithName:@"searviceConsume" reason:error.description userInfo:nil];
     }
+    [item setAttributesFromJson:jsonResult];
     
-    Product *newProduct = nil;
-    NSArray *jsonList = [jsonResult objectForKey:@"results"];
-    
-    for (NSDictionary *jsonProd in jsonList) {
-        newProduct = [[Product alloc] initWithJson:jsonProd];
-        if (newProduct) {
-            [self.allProducts addObject:newProduct];
-        }
-        newProduct = nil;
-    }
 }
 
 

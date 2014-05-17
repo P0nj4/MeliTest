@@ -22,4 +22,5 @@
 @property (nonatomic, strong) NSString *city;
 
 - (id)initWithJson:(NSDictionary *)json;
+- (void)setAttributesFromJson:(NSDictionary *)json;
 @end
