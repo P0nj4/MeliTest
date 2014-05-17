@@ -25,14 +25,18 @@
         UIImageView *iv = [[UIImageView alloc] initWithFrame:self.bounds];
         iv.tag = kiViewTag;
         iv.image = [self.images objectAtIndex:0];
-        
+        [iv setContentMode:UIViewContentModeScaleAspectFit];
         [self addSubview:iv];
-#warning falta el icono
+
         if (self.images.count > 1) {
-            UIView *icon = [[UIView alloc] initWithFrame:CGRectMake(4, 4, 4, 4)];
-            icon.layer.cornerRadius = 4;
-            icon.backgroundColor = [UIColor whiteColor];
-            [self addSubview:icon];
+            UILabel *countImage = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 10)];
+            countImage.text = [NSString stringWithFormat:@"%i/%i", self.index + 1, self.images.count];
+            countImage.font = [UIFont boldSystemFontOfSize:9];
+            countImage.textColor = [UIColor whiteColor];
+            countImage.tag = 99;
+            countImage.textAlignment = NSTextAlignmentCenter;
+            countImage.center = CGPointMake(iv.center.x, iv.frame.size.height - ((countImage.frame.size.height / 2) + 5));
+            [self addSubview:countImage];
         }
         
         UISwipeGestureRecognizer *gestureRight;
@@ -81,7 +85,8 @@
 
         iv.image = [self.images objectAtIndex:self.index];
     }
-    
+    UILabel *countImage = (UILabel *)[self viewWithTag:99];
+    countImage.text = [NSString stringWithFormat:@"%li/%lu", self.index + 1, (unsigned long)self.images.count];
     
 }
 /*

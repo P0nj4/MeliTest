@@ -15,6 +15,7 @@
 
 + (ProductManager *)sharedInstance;
 - (void)searchBy:(NSString *)search;
-- (void)setProductInformation:(Product *)item; 
+- (void)setProductInformation:(Product *)item;
+- (void)setProductDescription:(Product *)item;
 
 @end

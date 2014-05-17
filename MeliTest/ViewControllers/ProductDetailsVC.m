@@ -67,26 +67,35 @@
     __weak typeof(self) weakSelf = self;
     dispatch_queue_t myQueue = dispatch_queue_create("q_getProductDetails", NULL);
     dispatch_async(myQueue, ^{
-        [[ProductManager sharedInstance] setProductInformation:self.currentProduct];
-        
-        for (NSString *urlIMG in self.currentProduct.pictures) {
-            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlIMG]];
-            UIImage *imgAux = [UIImage imageWithData:imageData];
-            if (imgAux) {
-                [weakSelf.images addObject:imgAux];
+        @try {
+            [[ProductManager sharedInstance] setProductInformation:self.currentProduct];
+            
+            for (NSString *urlIMG in self.currentProduct.pictures) {
+                NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlIMG]];
+                UIImage *imgAux = [UIImage imageWithData:imageData];
+                if (imgAux) {
+                    [weakSelf.images addObject:imgAux];
+                }
             }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIViewPictureSwype *asScroll = [[UIViewPictureSwype alloc]initWithFrame:CGRectMake((weakSelf.view.bounds.size.width - 200) / 2,70.0,200.0,200.0) withImages:self.images];
+                [weakSelf.view addSubview:asScroll];
+                //"ProductDetailInfo" = "Condición: %@\nCantidad: %@\nVendidos: %@\nCiudad del vendedor%@\n\nDescripción";
+                weakSelf.lblInfo.text = [NSString stringWithFormat:NSLocalizedString(@"ProductDetailInfo", nil),weakSelf.currentProduct.condition, weakSelf.currentProduct.available_quantity, weakSelf.currentProduct.sold_quantity, weakSelf.currentProduct.city];
+                
+                weakSelf.lblInfo.frame = CGRectMake(weakSelf.lblInfo.frame.origin.x, weakSelf.lblInfo.frame.origin.y, weakSelf.lblInfo.frame.size.width, [weakSelf.lblInfo.text sizeWithFont:weakSelf.lblInfo.font constrainedToSize:CGSizeMake(weakSelf.lblInfo.frame.size.width, 99999) lineBreakMode:self.lblInfo.lineBreakMode].height);
+                NSLog(@"%@ %@",weakSelf.lblInfo.text,NSStringFromCGRect(weakSelf.lblInfo.frame));
+                
+                [LoadingView loadingHideOnView:weakSelf.view animated:YES];
+            });
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIViewPictureSwype *asScroll = [[UIViewPictureSwype alloc]initWithFrame:CGRectMake((weakSelf.view.bounds.size.width - 200) / 2,70.0,200.0,200.0) withImages:self.images];
-            [weakSelf.view addSubview:asScroll];
-            //"ProductDetailInfo" = "Condición: %@\nCantidad: %@\nVendidos: %@\nCiudad del vendedor%@\n\nDescripción";
-            weakSelf.lblInfo.text = [NSString stringWithFormat:NSLocalizedString(@"ProductDetailInfo", nil),weakSelf.currentProduct.condition, weakSelf.currentProduct.available_quantity, weakSelf.currentProduct.sold_quantity, weakSelf.currentProduct.city];
-            
-            weakSelf.lblInfo.frame = CGRectMake(weakSelf.lblInfo.frame.origin.x, weakSelf.lblInfo.frame.origin.y, weakSelf.lblInfo.frame.size.width, [weakSelf.lblInfo.text sizeWithFont:weakSelf.lblInfo.font constrainedToSize:CGSizeMake(weakSelf.lblInfo.frame.size.width, 99999) lineBreakMode:self.lblInfo.lineBreakMode].height);
-            NSLog(@"%@ %@",weakSelf.lblInfo.text,NSStringFromCGRect(weakSelf.lblInfo.frame));
-            
-            [LoadingView loadingHideOnView:weakSelf.view animated:YES];
-        });
+        @catch (NSException *exception) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"GenericError", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+            });
+        }
+        
     });
     
 }
@@ -94,6 +103,7 @@
 
 - (void)showDescription{
     ProductDescriptionVC *vc = [[ProductDescriptionVC alloc] init];
+    vc.currentProduct = self.currentProduct;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

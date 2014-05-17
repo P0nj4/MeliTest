@@ -138,7 +138,9 @@ static dispatch_queue_t imageQueue;
                 });
             }
             @catch (NSException *exception) {
+                dispatch_async(dispatch_get_main_queue(), ^{
                 [[[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"GenericError", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+                });
             }
         });
         [self.tblProducts reloadData];

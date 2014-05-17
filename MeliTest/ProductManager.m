@@ -31,7 +31,7 @@ static ProductManager *sharedPManager = nil;
     return self;
 }
 
-- (NSDictionary *)makeRequest:(NSString *)url error:(NSError **)error{
+- (id)makeRequest:(NSString *)url error:(NSError **)error{
     NSString *strURL = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSURL *urlForReq = [NSURL URLWithString:strURL];
@@ -85,5 +85,22 @@ static ProductManager *sharedPManager = nil;
     
 }
 
+
+
+- (void)setProductDescription:(Product *)item{
+    
+    NSError *error;
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mercadolibre.com/items/%@/descriptions",item.identifier];
+    NSArray *jsonResult = [self makeRequest:url error:&error];
+    
+
+    if (error || !jsonResult) {
+        @throw [[NSException alloc] initWithName:@"searviceConsume" reason:error.description userInfo:nil];
+    }
+    item.HTMLDescription = [[jsonResult objectAtIndex:0] objectForKey:@"text"];
+    item.PlainDescription = [[jsonResult objectAtIndex:0] objectForKey:@"plain_text"];
+    
+}
 
 @end

@@ -55,6 +55,11 @@
             self.city = [[[json objectForKey:@"seller_address"] objectForKey:@"city"] objectForKey:@"name"];
         }
     }
+    if (!IsNull([json objectForKey:@"seller_address"]) && !IsNull([[json objectForKey:@"seller_address"] objectForKey:@"city"])) {
+        if (!IsNull([[[json objectForKey:@"seller_address"] objectForKey:@"city"] objectForKey:@"name"])) {
+            self.city = [[[json objectForKey:@"seller_address"] objectForKey:@"city"] objectForKey:@"name"];
+        }
+    }
 }
 
 

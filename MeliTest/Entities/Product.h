@@ -20,6 +20,8 @@
 @property (nonatomic, assign) NSInteger sold_quantity;
 @property (nonatomic, strong) NSString *condition;
 @property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *HTMLDescription;
+@property (nonatomic, strong) NSString *PlainDescription;
 
 - (id)initWithJson:(NSDictionary *)json;
 - (void)setAttributesFromJson:(NSDictionary *)json;
