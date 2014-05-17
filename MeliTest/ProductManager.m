@@ -35,6 +35,7 @@ static ProductManager *sharedPManager = nil;
 
 - (void)searchBy:(NSString *)search;
 {
+#warning encodeURL
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.mercadolibre.com/sites/MLA/search?q=%@&limit=10&offset=%i", search, self.allProducts.count - 1]];
     
     
@@ -43,12 +44,15 @@ static ProductManager *sharedPManager = nil;
     NSURLRequest* urlRequest =  [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
     NSError *error;
     NSData* data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error] ;
+
+    if (error) {
+        @throw [[NSException alloc] initWithName:@"searviceConsume" reason:error.description userInfo:nil];
+    }
     
     NSDictionary *jsonResult = [NSJSONSerialization JSONObjectWithData:data
                                                                options:0
                                                                  error:NULL];
-    
-    //NSLog( @"data: %@" , [jsonResult objectForKey:@"results"]) ;
+
     Product *newProduct = nil;
     NSArray *jsonList = [jsonResult objectForKey:@"results"];
     

@@ -20,11 +20,14 @@
 		4416B5C219268D23006084C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4416B5C019268D23006084C1 /* InfoPlist.strings */; };
 		4416B5C419268D23006084C1 /* MeliTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5C319268D23006084C1 /* MeliTestTests.m */; };
 		4416B5CF19268EA7006084C1 /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5CE19268EA7006084C1 /* ProductManager.m */; };
-		4416B5D219268F02006084C1 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5D119268F02006084C1 /* Product.m */; };
 		4416B5ED1926A334006084C1 /* ProductsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5EC1926A334006084C1 /* ProductsTableView.m */; };
-		4416B5F01926A36E006084C1 /* ProductsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5EF1926A36E006084C1 /* ProductsVC.m */; };
 		4416B5F31926A462006084C1 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5F21926A462006084C1 /* ProductCell.m */; };
 		4416B5F91926E981006084C1 /* UIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5F81926E981006084C1 /* UIUtilities.m */; };
+		4416B5FD192709B9006084C1 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5FC192709B9006084C1 /* Product.m */; };
+		4416B601192709EC006084C1 /* ProductsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B600192709EC006084C1 /* ProductsVC.m */; };
+		4416B60419270A7F006084C1 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B60319270A7F006084C1 /* SearchVC.m */; };
+		4416B61C192793F1006084C1 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B61B192793F1006084C1 /* LoadingView.m */; };
+		4416B62519279B2D006084C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4416B62719279B2D006084C1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,16 +59,24 @@
 		4416B5C319268D23006084C1 /* MeliTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeliTestTests.m; sourceTree = "<group>"; };
 		4416B5CD19268EA7006084C1 /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
 		4416B5CE19268EA7006084C1 /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManager.m; sourceTree = "<group>"; };
-		4416B5D019268F02006084C1 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		4416B5D119268F02006084C1 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		4416B5EB1926A334006084C1 /* ProductsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableView.h; sourceTree = "<group>"; };
 		4416B5EC1926A334006084C1 /* ProductsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableView.m; sourceTree = "<group>"; };
-		4416B5EE1926A36E006084C1 /* ProductsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsVC.h; sourceTree = "<group>"; };
-		4416B5EF1926A36E006084C1 /* ProductsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsVC.m; sourceTree = "<group>"; };
 		4416B5F11926A462006084C1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
 		4416B5F21926A462006084C1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
 		4416B5F71926E981006084C1 /* UIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtilities.h; sourceTree = "<group>"; };
 		4416B5F81926E981006084C1 /* UIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtilities.m; sourceTree = "<group>"; };
+		4416B5FB192709B9006084C1 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		4416B5FC192709B9006084C1 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		4416B5FF192709EC006084C1 /* ProductsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsVC.h; sourceTree = "<group>"; };
+		4416B600192709EC006084C1 /* ProductsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsVC.m; sourceTree = "<group>"; };
+		4416B60219270A7F006084C1 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
+		4416B60319270A7F006084C1 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
+		4416B61619279369006084C1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4416B61719279369006084C1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4416B61A192793F1006084C1 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		4416B61B192793F1006084C1 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		4416B62619279B2D006084C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4416B62819279B33006084C1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,18 +136,17 @@
 		4416B5A419268D23006084C1 /* MeliTest */ = {
 			isa = PBXGroup;
 			children = (
+				4416B619192793F1006084C1 /* CustomizedViews */,
+				4416B5FE192709EC006084C1 /* ViewControllers */,
+				4416B5FA192709B9006084C1 /* Entities */,
 				4416B5AD19268D23006084C1 /* AppDelegate.h */,
 				4416B5AE19268D23006084C1 /* AppDelegate.m */,
 				4416B5B019268D23006084C1 /* Images.xcassets */,
 				4416B5A519268D23006084C1 /* Supporting Files */,
 				4416B5CD19268EA7006084C1 /* ProductManager.h */,
 				4416B5CE19268EA7006084C1 /* ProductManager.m */,
-				4416B5D019268F02006084C1 /* Product.h */,
-				4416B5D119268F02006084C1 /* Product.m */,
 				4416B5EB1926A334006084C1 /* ProductsTableView.h */,
 				4416B5EC1926A334006084C1 /* ProductsTableView.m */,
-				4416B5EE1926A36E006084C1 /* ProductsVC.h */,
-				4416B5EF1926A36E006084C1 /* ProductsVC.m */,
 				4416B5F11926A462006084C1 /* ProductCell.h */,
 				4416B5F21926A462006084C1 /* ProductCell.m */,
 				4416B5F71926E981006084C1 /* UIUtilities.h */,
@@ -152,6 +162,7 @@
 				4416B5A719268D23006084C1 /* InfoPlist.strings */,
 				4416B5AA19268D23006084C1 /* main.m */,
 				4416B5AC19268D23006084C1 /* MeliTest-Prefix.pch */,
+				4416B62719279B2D006084C1 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -172,6 +183,35 @@
 				4416B5C019268D23006084C1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4416B5FA192709B9006084C1 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4416B5FB192709B9006084C1 /* Product.h */,
+				4416B5FC192709B9006084C1 /* Product.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4416B5FE192709EC006084C1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4416B5FF192709EC006084C1 /* ProductsVC.h */,
+				4416B600192709EC006084C1 /* ProductsVC.m */,
+				4416B60219270A7F006084C1 /* SearchVC.h */,
+				4416B60319270A7F006084C1 /* SearchVC.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4416B619192793F1006084C1 /* CustomizedViews */ = {
+			isa = PBXGroup;
+			children = (
+				4416B61A192793F1006084C1 /* LoadingView.h */,
+				4416B61B192793F1006084C1 /* LoadingView.m */,
+			);
+			path = CustomizedViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +272,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 4416B59219268D23006084C1;
 			productRefGroup = 4416B59C19268D23006084C1 /* Products */;
@@ -250,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4416B5A919268D23006084C1 /* InfoPlist.strings in Resources */,
+				4416B62519279B2D006084C1 /* Localizable.strings in Resources */,
 				4416B5B119268D23006084C1 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,11 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4416B5AF19268D23006084C1 /* AppDelegate.m in Sources */,
-				4416B5D219268F02006084C1 /* Product.m in Sources */,
+				4416B61C192793F1006084C1 /* LoadingView.m in Sources */,
 				4416B5F91926E981006084C1 /* UIUtilities.m in Sources */,
 				4416B5CF19268EA7006084C1 /* ProductManager.m in Sources */,
 				4416B5ED1926A334006084C1 /* ProductsTableView.m in Sources */,
-				4416B5F01926A36E006084C1 /* ProductsVC.m in Sources */,
+				4416B60419270A7F006084C1 /* SearchVC.m in Sources */,
+				4416B601192709EC006084C1 /* ProductsVC.m in Sources */,
+				4416B5FD192709B9006084C1 /* Product.m in Sources */,
 				4416B5F31926A462006084C1 /* ProductCell.m in Sources */,
 				4416B5AB19268D23006084C1 /* main.m in Sources */,
 			);
@@ -303,6 +347,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4416B5A819268D23006084C1 /* en */,
+				4416B61619279369006084C1 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -311,8 +356,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				4416B5C119268D23006084C1 /* en */,
+				4416B61719279369006084C1 /* es */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4416B62719279B2D006084C1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4416B62619279B2D006084C1 /* en */,
+				4416B62819279B33006084C1 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

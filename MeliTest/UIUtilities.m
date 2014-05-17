@@ -26,4 +26,19 @@
     return result;
 }
 
+
++ (void)moveView:(UIView*)view newYposition:(float)newYposition {
+    // si la Y es menor de -216, lo limita a 216 porque sino se ve un espacio en blanco de la vista
+    if (newYposition < -216) newYposition = -216;
+    if([[[UIDevice currentDevice] systemVersion] floatValue] >= 7){
+        newYposition += 64;
+    }
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:0.3];
+	
+    view.frame = CGRectMake(view.frame.origin.x, newYposition, view.frame.size.width, view.frame.size.height + ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7 ? (newYposition >= 0 ? newYposition : newYposition * -1) : 0));
+	
+	[UIView commitAnimations];
+}
+
 @end

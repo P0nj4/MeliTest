@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ProductsVC.h"
+#import "SearchVC.h"
 
 @implementation AppDelegate
 
@@ -18,7 +18,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     
-    ProductsVC *initialController = [[ProductsVC alloc] init];
+    SearchVC *initialController = [[SearchVC alloc] init];
     UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:initialController];
     
     self.window.rootViewController = navBar;
@@ -27,7 +27,7 @@
 
     
     
-    
+
     
     return YES;
 }

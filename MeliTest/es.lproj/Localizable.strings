@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  MeliTest
+
+  Created by German Pereyra on 5/17/14.
+  Copyright (c) 2014 P0nj4. All rights reserved.
+*/
+"Loading" = "Cargando";
+"NoResults" = "No encontramos nada con \"%@\"";
+
+//Errors
+"GenericError" = "Ups! ocurrio un error. Por favor vuelve a intentarlo mas tarde.";

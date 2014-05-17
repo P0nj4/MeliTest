@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ProductsVC : UIViewController
-
+@property (nonatomic, strong) NSString *textForSearch;
 @end

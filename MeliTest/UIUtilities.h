@@ -10,4 +10,5 @@
 
 @interface UIUtilities : NSObject
 + (NSString *)stringWithDoubleAndCurrencySymbol:(double)number;
++ (void)moveView:(UIView*)view newYposition:(float)newYposition;
 @end
