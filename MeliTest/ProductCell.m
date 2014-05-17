@@ -36,10 +36,7 @@
         [self.contentView addSubview:self.lblPrice];
         [self.contentView addSubview:self.imgThumbnail];
         
-        UIImageView *disclosure = [[UIImageView alloc] initWithFrame:CGRectMake(297, 36, 9, 13)];
-        disclosure.image = [UIImage imageNamed:@"disclosure"];
-        [self.contentView addSubview:disclosure];
-        
+        [self setAccessoryType:(UITableViewCellAccessoryDisclosureIndicator)];
     }
     return self;
 }
