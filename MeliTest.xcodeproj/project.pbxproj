@@ -19,6 +19,12 @@
 		4416B5BA19268D23006084C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4416B5A219268D23006084C1 /* UIKit.framework */; };
 		4416B5C219268D23006084C1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4416B5C019268D23006084C1 /* InfoPlist.strings */; };
 		4416B5C419268D23006084C1 /* MeliTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5C319268D23006084C1 /* MeliTestTests.m */; };
+		4416B5CF19268EA7006084C1 /* ProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5CE19268EA7006084C1 /* ProductManager.m */; };
+		4416B5D219268F02006084C1 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5D119268F02006084C1 /* Product.m */; };
+		4416B5ED1926A334006084C1 /* ProductsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5EC1926A334006084C1 /* ProductsTableView.m */; };
+		4416B5F01926A36E006084C1 /* ProductsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5EF1926A36E006084C1 /* ProductsVC.m */; };
+		4416B5F31926A462006084C1 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5F21926A462006084C1 /* ProductCell.m */; };
+		4416B5F91926E981006084C1 /* UIUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416B5F81926E981006084C1 /* UIUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,18 @@
 		4416B5BF19268D23006084C1 /* MeliTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MeliTestTests-Info.plist"; sourceTree = "<group>"; };
 		4416B5C119268D23006084C1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4416B5C319268D23006084C1 /* MeliTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeliTestTests.m; sourceTree = "<group>"; };
+		4416B5CD19268EA7006084C1 /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
+		4416B5CE19268EA7006084C1 /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManager.m; sourceTree = "<group>"; };
+		4416B5D019268F02006084C1 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		4416B5D119268F02006084C1 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		4416B5EB1926A334006084C1 /* ProductsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableView.h; sourceTree = "<group>"; };
+		4416B5EC1926A334006084C1 /* ProductsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableView.m; sourceTree = "<group>"; };
+		4416B5EE1926A36E006084C1 /* ProductsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsVC.h; sourceTree = "<group>"; };
+		4416B5EF1926A36E006084C1 /* ProductsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsVC.m; sourceTree = "<group>"; };
+		4416B5F11926A462006084C1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		4416B5F21926A462006084C1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		4416B5F71926E981006084C1 /* UIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtilities.h; sourceTree = "<group>"; };
+		4416B5F81926E981006084C1 /* UIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +129,18 @@
 				4416B5AE19268D23006084C1 /* AppDelegate.m */,
 				4416B5B019268D23006084C1 /* Images.xcassets */,
 				4416B5A519268D23006084C1 /* Supporting Files */,
+				4416B5CD19268EA7006084C1 /* ProductManager.h */,
+				4416B5CE19268EA7006084C1 /* ProductManager.m */,
+				4416B5D019268F02006084C1 /* Product.h */,
+				4416B5D119268F02006084C1 /* Product.m */,
+				4416B5EB1926A334006084C1 /* ProductsTableView.h */,
+				4416B5EC1926A334006084C1 /* ProductsTableView.m */,
+				4416B5EE1926A36E006084C1 /* ProductsVC.h */,
+				4416B5EF1926A36E006084C1 /* ProductsVC.m */,
+				4416B5F11926A462006084C1 /* ProductCell.h */,
+				4416B5F21926A462006084C1 /* ProductCell.m */,
+				4416B5F71926E981006084C1 /* UIUtilities.h */,
+				4416B5F81926E981006084C1 /* UIUtilities.m */,
 			);
 			path = MeliTest;
 			sourceTree = "<group>";
@@ -240,6 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4416B5AF19268D23006084C1 /* AppDelegate.m in Sources */,
+				4416B5D219268F02006084C1 /* Product.m in Sources */,
+				4416B5F91926E981006084C1 /* UIUtilities.m in Sources */,
+				4416B5CF19268EA7006084C1 /* ProductManager.m in Sources */,
+				4416B5ED1926A334006084C1 /* ProductsTableView.m in Sources */,
+				4416B5F01926A36E006084C1 /* ProductsVC.m in Sources */,
+				4416B5F31926A462006084C1 /* ProductCell.m in Sources */,
 				4416B5AB19268D23006084C1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +396,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MeliTest/MeliTest-Prefix.pch";
 				INFOPLIST_FILE = "MeliTest/MeliTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,6 +410,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MeliTest/MeliTest-Prefix.pch";
 				INFOPLIST_FILE = "MeliTest/MeliTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

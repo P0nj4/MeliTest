@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ProductsVC.h"
 
 @implementation AppDelegate
 
@@ -15,9 +16,22 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+
+    
+    ProductsVC *initialController = [[ProductsVC alloc] init];
+    UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:initialController];
+    
+    self.window.rootViewController = navBar;
     [self.window makeKeyAndVisible];
+
+
+    
+    
+    
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
