@@ -7,9 +7,11 @@ Prueba de aplicación de IOS de MercadoLibre
 Ejercicio iOS 
 <em>
 Escribir una aplicación iOS que liste productos de mercadolibre según un input de búsqueda y al seleccionar uno te lleva a la página del producto mostrando la información básica del mismo (Imágenes, Título, Precio, etc...).
-
+</em>
+<em>
 Subir el código fuente a github en un repositorio público y enviar la URL al mismo. Usar para referencia de la API de MercadoLibre http://developers.mercadolibre.com.
-
+</em>
+<em>
 No se puede utilizar storyboards ni xib files. Y tiene que hacer su propia implementación de UITableView (No utilizar UITableViewController)
 </em>
 
