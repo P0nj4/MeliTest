@@ -62,10 +62,10 @@
 		4416B5C319268D23006084C1 /* MeliTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeliTestTests.m; sourceTree = "<group>"; };
 		4416B5CD19268EA7006084C1 /* ProductManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductManager.h; sourceTree = "<group>"; };
 		4416B5CE19268EA7006084C1 /* ProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductManager.m; sourceTree = "<group>"; };
-		4416B5EB1926A334006084C1 /* ProductsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsTableView.h; sourceTree = "<group>"; };
-		4416B5EC1926A334006084C1 /* ProductsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsTableView.m; sourceTree = "<group>"; };
-		4416B5F11926A462006084C1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
-		4416B5F21926A462006084C1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		4416B5EB1926A334006084C1 /* ProductsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductsTableView.h; path = ../ProductsTableView.h; sourceTree = "<group>"; };
+		4416B5EC1926A334006084C1 /* ProductsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductsTableView.m; path = ../ProductsTableView.m; sourceTree = "<group>"; };
+		4416B5F11926A462006084C1 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductCell.h; path = ../ProductCell.h; sourceTree = "<group>"; };
+		4416B5F21926A462006084C1 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProductCell.m; path = ../ProductCell.m; sourceTree = "<group>"; };
 		4416B5F71926E981006084C1 /* UIUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtilities.h; sourceTree = "<group>"; };
 		4416B5F81926E981006084C1 /* UIUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtilities.m; sourceTree = "<group>"; };
 		4416B5FB192709B9006084C1 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
@@ -154,10 +154,6 @@
 				4416B5A519268D23006084C1 /* Supporting Files */,
 				4416B5CD19268EA7006084C1 /* ProductManager.h */,
 				4416B5CE19268EA7006084C1 /* ProductManager.m */,
-				4416B5EB1926A334006084C1 /* ProductsTableView.h */,
-				4416B5EC1926A334006084C1 /* ProductsTableView.m */,
-				4416B5F11926A462006084C1 /* ProductCell.h */,
-				4416B5F21926A462006084C1 /* ProductCell.m */,
 				4416B5F71926E981006084C1 /* UIUtilities.h */,
 				4416B5F81926E981006084C1 /* UIUtilities.m */,
 			);
@@ -223,6 +219,10 @@
 			children = (
 				4416B61A192793F1006084C1 /* LoadingView.h */,
 				4416B61B192793F1006084C1 /* LoadingView.m */,
+				4416B5F11926A462006084C1 /* ProductCell.h */,
+				4416B5F21926A462006084C1 /* ProductCell.m */,
+				4416B5EB1926A334006084C1 /* ProductsTableView.h */,
+				4416B5EC1926A334006084C1 /* ProductsTableView.m */,
 				4416B6461927BC65006084C1 /* UIViewPictureSwype.h */,
 				4416B6471927BC65006084C1 /* UIViewPictureSwype.m */,
 			);
@@ -548,6 +548,7 @@
 				4416B5C919268D23006084C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4416B5CA19268D23006084C1 /* Build configuration list for PBXNativeTarget "MeliTestTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +557,7 @@
 				4416B5CC19268D23006084C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
